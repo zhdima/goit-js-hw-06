@@ -12,3 +12,21 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+function doTask03() {
+
+  const ulGalleryEl = document.querySelector('ul.gallery');
+  
+  if (!ulGalleryEl) {
+    console.log('Error: ul#gallery is not found!');
+    return;
+  }
+
+  const markup = images.map(({ url, alt }) =>
+    `<li class="item"><img src="${url}" alt="${alt}"></li>`).join('');
+
+  ulGalleryEl.insertAdjacentHTML('afterbegin', markup);
+}
+
+doTask03();
+
